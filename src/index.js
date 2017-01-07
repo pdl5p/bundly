@@ -1,5 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './app/app';
+import AppOne from './app/appOne';
+import AppTwo from './app/appTwo';
 
-module.exports = App;
+module.exports = { 
+    AppOne,
+    AppTwo 
+};

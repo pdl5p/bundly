@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Heading from './components/heading';
 import Body from './components/body';
 
-export default class App extends Component{
+export default class AppOne extends Component{
 
     componentWillMount(){
         console.log("App mounting");

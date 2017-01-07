@@ -1,14 +1,17 @@
 <html>
 <head><title>Hello</title></head>
 <body>
-    <div id="myApp"></div>
+    <div id="myApp1"></div>
+    <div id="myApp2"></div>
+    
 
     <script type="text/javascript" src="../node_modules/react/dist/react.js"></script>
     <script type="text/javascript" src="../node_modules/react-dom/dist/react-dom.js"></script>
     <script type="text/javascript" src="myApp.js"></script>
 
     <script type="text/javascript">
-    ReactDOM.render(React.createElement(myApp, null, null), document.querySelector("#myApp"));
+    ReactDOM.render(React.createElement(myApp.AppOne, null, null), document.querySelector("#myApp1"));
+    ReactDOM.render(React.createElement(myApp.AppTwo, null, null), document.querySelector("#myApp2"));
     </script>
 </body>
 </html>

@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 
 export default class Heading extends Component{
 
+    constructor(props){
+        super(props);
+        
+        this.text = props.text || "This is the default";
+    }
     render() {
-        return <h1>This is a heading!</h1>
+        return <h1>{this.text}</h1>
     }
 }

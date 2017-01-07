@@ -1,5 +1,5 @@
-
-var nm = __dirname + '/node_modules';
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var webpack = require('webpack');
 
 module.exports = {
     entry: './src/index.js',
@@ -17,5 +17,12 @@ module.exports = {
         loaders: [
             { test: /\.js/, loader: "babel"}
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            inject: false,
+            template: './src/index.html'
+        }),
+        new webpack.optimize.UglifyJsPlugin()
+    ]
 }

@@ -21,7 +21,7 @@ export default class App extends Component{
         return (
             <div>
                 <Heading />
-                <p>Sweet as bro</p>
+                <p>Sweet</p>
                 <input type='text' />
                 <Body />
             </div>

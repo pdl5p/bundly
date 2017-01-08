@@ -18,10 +18,11 @@ export default class AppOne extends Component{
 
     render(){
         console.log("App rendering");
+        let a=10;
         return (
             <div>
                 <Heading />
-                <p>Sweet</p>
+                <p>Sweet {a}</p>
                 <input type='text' />
                 <Body />
             </div>

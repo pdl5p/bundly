@@ -8,7 +8,7 @@ export default class AppTwo extends Component{
         console.log("App2 rendering");
         return (
             <div>
-                <Heading text="Hello there" />
+                <Heading text="Hello there from app 2" />
             </div>
         );
     }

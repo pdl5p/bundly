@@ -5,7 +5,7 @@ export default class Heading extends Component{
     constructor(props){
         super(props);
         
-        this.text = props.text || "This is the default";
+        this.text = props.text || "Default heading";
     }
     render() {
         return <h1>{this.text}</h1>

@@ -1,22 +1,50 @@
 import * as React from 'react';
-//import * as moment from 'moment';
+import * as moment from 'moment';
+import * as Rx from 'rxjs/Rx';
 import ListItem from './listItem';
 
-const List = () => {
+class List extends React.Component<any, any> {
 
-    //const b:any = moment().format('YYYY-MM-DD');
-    // console.log(b);
-    
+    constructor(props){
+        super(props);
 
-    let a: string = "ABC";
-    let jsx = (Array.apply(null, Array((Math.random() * 10 | 0) + 1)))
-                .map((o, i) => <ListItem key={i} index={i} />);
+        this.state = {
+            count: 0
+        }
+    }
 
-    return (
-        <ul>
-            {jsx}
-        </ul>
-    )
+    public componentDidMount(){
+        let o$: Rx.Observable<string> = Rx.Observable.of<number>(1,2,3)
+                                        .map<number, string>((v, i) => v.toString());
+
+        let t$: any = Rx.Observable.interval(500).take(10);
+
+        t$.subscribe((i) => {
+            this.setState({ count: this.state.count + 1});
+           const b:moment.Moment = moment();
+            console.log("I", i, b.toISOString());
+        });
+    }
+
+    public render(){
+
+        let jsx = (Array.apply(null, Array((Math.random() * 10 | 0) + 1)))
+                    .map((o, i) => <ListItem key={i} index={i} />);
+
+        var style={
+            display: 'block',
+            backgroundColor: 'lightGreen'
+        };
+
+        return (
+            <div>
+            <p>Counter: {this.state.count}</p>
+            <ul style={style}>
+                {jsx}
+            </ul>
+            </div>
+        )
+    }
 }
 
 export default List;

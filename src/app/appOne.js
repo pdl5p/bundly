@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
 import Heading from './components/heading';
 import Body from './components/body';
 
@@ -18,10 +20,16 @@ export default class AppOne extends Component{
 
     render(){
         console.log("App rendering");
-        let a=10;
+        const a= ~~(Math.random() * 100);
+
+        const style = {
+            backgroundColor: 'Green',
+            padding: '20px'
+        };
+
         return (
-            <div>
-                <Heading />
+            <div style={style}>
+                <Heading text="This is app one" />
                 <p>Sweet {a}</p>
                 <input type='text' />
                 <Body />
@@ -29,3 +37,8 @@ export default class AppOne extends Component{
         );
     }
 }
+
+const Init = (element) => {
+    ReactDOM.render(<AppOne />, element);
+}
+export { Init };

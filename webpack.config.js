@@ -1,14 +1,15 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
     entry: [
         './src/index.js'
     ],
     output: {
-        path: './dist2',
-        filename: 'myApp.js',
-        library: 'PEPPA',
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundly.js',
+        library: 'BUNDLY',
         libraryTarget: 'var'
     },
     externals: {
@@ -31,5 +32,10 @@ module.exports = {
         }),
         //new webpack.optimize.UglifyJsPlugin()
     ],
-    devtool: 'inline-source-map'
+    devtool: 'inline-source-map',
+    devServer: {
+        inline: true,
+        port: 3000,
+        hot: false
+    }
 }

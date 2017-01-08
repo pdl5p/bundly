@@ -1,7 +1,7 @@
-import AppOne from './app/appOne';
-import AppTwo from './app/appTwo';
+import { Init as AppOneInit } from './app/appOne';
+import { Init as AppTwoInit } from './app/appTwo';
 
 module.exports = { 
-    AppOne,
-    AppTwo 
+    AppOneInit,
+    AppTwoInit
 };

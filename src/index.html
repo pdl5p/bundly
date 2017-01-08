@@ -6,11 +6,11 @@
     
     <script type="text/javascript" src="../node_modules/react/dist/react.js"></script>
     <script type="text/javascript" src="../node_modules/react-dom/dist/react-dom.js"></script>
-    <script type="text/javascript" src="myApp.js"></script>
+    <script type="text/javascript" src="bundly.js"></script>
 
     <script type="text/javascript">
-    ReactDOM.render(React.createElement(PEPPA.AppOne, null, null), document.querySelector("#myApp1"));
-    ReactDOM.render(React.createElement(PEPPA.AppTwo, null, null), document.querySelector("#myApp2"));
+        BUNDLY.AppOneInit(document.querySelector("#myApp1"));
+        BUNDLY.AppTwoInit(document.querySelector("#myApp2"));
     </script>
 </body>
 </html>

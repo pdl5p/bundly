@@ -7,15 +7,12 @@ import Body from './components/body';
 export default class AppOne extends Component{
 
     componentWillMount(){
-        console.log("App mounting");
+        console.log("App mounting...");
+        
     }
 
     componentDidMount(){
         console.log("App mounted");
-    }
-
-    componentWillUnmount(){
-        console.log("App unmounting");
     }
 
     render(){
@@ -29,7 +26,7 @@ export default class AppOne extends Component{
 
         return (
             <div style={style}>
-                <Heading text="This is app one" />
+                <Heading />
                 <p>Sweet {a}</p>
                 <input type='text' />
                 <Body />

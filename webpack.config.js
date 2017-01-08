@@ -1,4 +1,5 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CheckerPlugin } = require('awesome-typescript-loader');
 var webpack = require('webpack');
 var path = require('path');
 
@@ -16,12 +17,19 @@ module.exports = {
         'react': 'React',
         'react-dom': 'ReactDOM'
     },
+    resolve: {
+        extensions: ['', '.ts', '.tsx', '.js', '.jsx']
+    },
     module: {
         loaders: [
             { 
                 test: /\.jsx?$/, 
                 loader: "babel",
                 exclude: /node_modules/
+            },
+            {
+                test: /\.tsx?$/,
+                loaders:['babel', 'awesome-typescript']
             }
         ]
     },
@@ -31,6 +39,7 @@ module.exports = {
             template: './src/index.html'
         }),
         //new webpack.optimize.UglifyJsPlugin()
+        new CheckerPlugin()
     ],
     devtool: 'inline-source-map',
     devServer: {

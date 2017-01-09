@@ -1,14 +1,24 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import * as moment from 'moment';
+import * as Rx from '@reactivex/rxjs';
+import { default as C } from './Heading/Heading';
 
-import Heading from './components/heading';
-import Body from './components/body';
+const { Observable } = Rx;
 
-export default class AppOne extends Component{
+export default class AppOne extends React.Component<any, any>{
 
     componentWillMount(){
         console.log("App mounting...");
-        
+
+        let n = moment();
+        let o$ = Observable.interval(1000).take(5);
+
+        o$.subscribe((i) => {
+            let m = moment().format("hh:mm:ss:ttt");
+
+            console.log("Next", m);
+        });
     }
 
     componentDidMount(){
@@ -26,10 +36,8 @@ export default class AppOne extends Component{
 
         return (
             <div style={style}>
-                <Heading />
-                <p>Sweet {a}</p>
+                <C text="abc" />
                 <input type='text' />
-                <Body />
             </div>
         );
     }

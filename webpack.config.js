@@ -14,7 +14,7 @@ let externals = {
 }
 //_.merge(externals, wprx());
 
-console.log(externals);
+//console.log(externals);
 
 module.exports = {
     entry: [

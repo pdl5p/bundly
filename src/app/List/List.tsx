@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as moment from 'moment';
 import * as Rx from '@reactivex/rxjs';
-import ListItem from './listItem';
+import ListItem from './ListItem';
 
 const { Observable } = Rx;
 
@@ -19,7 +19,7 @@ class List extends React.Component<any, any> {
         let o$: Rx.Observable<string> = Observable.of<number>(1,2,3)
                                         .map<number, string>((v, i) => v.toString());
 
-        let t$: any = Rx.Observable.interval(500).take(10);
+        let t$: any = Rx.Observable.interval(500).skip(10).take(10);
 
         t$.subscribe((i) => {
             this.setState({ count: this.state.count + 1});
@@ -35,12 +35,14 @@ class List extends React.Component<any, any> {
 
         var style={
             display: 'block',
-            backgroundColor: 'lightGreen'
+            backgroundColor: 'darkGreen',
+            padding: '10px',
+            color: 'white'
         };
 
         return (
             <div>
-            <p>Counter: {this.state.count}</p>
+            <p>Counter is: {this.state.count}</p>
             <ul style={style}>
                 {jsx}
             </ul>

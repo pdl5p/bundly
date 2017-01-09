@@ -7,10 +7,11 @@ class C1{
 class C2{
 
     public c1: C1;
+    public c2: C1;
 
     test(): void {
         this.c1 = new C1();
-        this.c1.age = 1;
-
+        this.c2 = new C1();
+        this.c2.name = "";
     }
 }

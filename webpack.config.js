@@ -2,6 +2,19 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CheckerPlugin } = require('awesome-typescript-loader');
 var webpack = require('webpack');
 var path = require('path');
+//var wprx = require('webpack-rxjs-externals');
+var _ = require('lodash');
+
+
+let externals = {
+    'moment': 'moment',
+    'react': 'React',
+    'react-dom': 'ReactDOM',
+    '@reactivex/rxjs': 'Rx'
+}
+//_.merge(externals, wprx());
+
+console.log(externals);
 
 module.exports = {
     entry: [
@@ -13,17 +26,14 @@ module.exports = {
         library: 'BUNDLY',
         libraryTarget: 'var'
     },
-    externals: {
-        'react': 'React',
-        'react-dom': 'ReactDOM'
-    },
+    externals,
     resolve: {
         extensions: ['', '.ts', '.tsx', '.js', '.jsx']
     },
     module: {
         loaders: [
-            { 
-                test: /\.jsx?$/, 
+            {
+                test: /\.jsx?$/,
                 loader: "babel",
                 exclude: /node_modules/
             },
@@ -42,6 +52,7 @@ module.exports = {
         new CheckerPlugin()
     ],
     devtool: 'inline-source-map',
+    //devtool: 'eval',
     devServer: {
         inline: true,
         port: 3000,

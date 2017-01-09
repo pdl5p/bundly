@@ -11,12 +11,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@reactivex/rxjs": "^5.0.3",
     "@types/react": "0.0.0",
     "@types/react-dom": "^0.14.20",
     "moment": "^2.17.1",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "rxjs": "^5.0.3"
+    "react-dom": "^15.4.2"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^3.0.0-beta.17",
@@ -24,6 +24,7 @@
     "babel-loader": "^6.2.10",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
+    "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-util": "^3.0.8",
     "gulp-webpack": "^1.5.0",

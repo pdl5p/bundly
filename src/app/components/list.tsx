@@ -1,7 +1,9 @@
 import * as React from 'react';
 import * as moment from 'moment';
-import * as Rx from 'rxjs/Rx';
+import * as Rx from '@reactivex/rxjs';
 import ListItem from './listItem';
+
+const { Observable } = Rx;
 
 class List extends React.Component<any, any> {
 
@@ -14,7 +16,7 @@ class List extends React.Component<any, any> {
     }
 
     public componentDidMount(){
-        let o$: Rx.Observable<string> = Rx.Observable.of<number>(1,2,3)
+        let o$: Rx.Observable<string> = Observable.of<number>(1,2,3)
                                         .map<number, string>((v, i) => v.toString());
 
         let t$: any = Rx.Observable.interval(500).take(10);

@@ -1,13 +1,20 @@
 var gulp = require('gulp');
 var Gwebpack = require('gulp-webpack');
-
 var del = require('del');
 var WebpackDevServer = require('webpack-dev-server');
 var gutil = require('gulp-util');
 var path = require('path');
 
+//var wprx = require('webpack-rxjs-externals');
+
 var webpackOptions = require('./webpack.config');
 var webpack = require('webpack');
+
+// gulp.task('wprx', () => {
+
+//     console.log(wprx());
+
+// });
 
 gulp.task('default', ['clean'], () => {
 
